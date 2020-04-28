@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="regions">지역선택</label>
+<div id="example">
+    <select id="regions">
+        <option disabled="disabled" selected>선택</option>
+        <option v-for="(val,key) in regions" v-bind:value="key">{{val}}</option>
+    </select>
+</div>
+</body>
+<script type="text/javascript">
+    var regions ={
+        'A' :'Asia',
+        'B' :'America',
+        'C' :'China',
+        'D' :'Korea'
+    };
+
+    var list = new Vue({el:'#example', data : {regions :regions}})
+</script>
+</html>

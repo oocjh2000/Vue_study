@@ -6,10 +6,13 @@
     <title>Title</title>
 </head>
 <body>
+
 <div id="account">
-    예금액 : <input type="text" v-model="amount"/>
+    <label for="input_amount">예금액 :</label>
+    <input id="input_amount" type="text" v-model="amount"/>
     <br>
-    국밥가격 : <input type="text" v-model="cost"/>
+    <label for="input_cost">예금액 :</label>
+    <input id="input_cost" type="text" v-model="cost"/>
     <h1 v-if="cost<=amount">그 돈이면 든든한 국밥 {{amount/cost}} 그릇 든든하게 먹고말지</h1>
     <h1 v-else>넌 국밥 먹을 돈이 없구나?</h1>
 </div>
