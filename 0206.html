@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="account">
+    예금액 : <input type="text" v-model="amount"/>
+    <br>
+    국밥가격 : <input type="text" v-model="cost"/>
+    <h1 v-if="cost<=amount">그 돈이면 든든한 국밥 {{amount/cost}} 그릇 든든하게 먹고말지</h1>
+    <h1 v-else>넌 국밥 먹을 돈이 없구나?</h1>
+</div>
+<script type="text/javascript">
+    var simple1 =new Vue({
+        el:'#account',
+        data : {
+            amount : 0,
+            cost: 6000
+        }
+    })
+</script>
+</body>
+</html>
