@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./vue.js"></script>
+</head>
+<template id="timeTemplate">
+    <div>
+        <span>{{nowTs}}</span>
+        <button @click="timeClick">현재시간</button>
+    </div>
+</template>
+<script type="text/javascript">
+    Vue.component('time-component', {
+        template : '#timeTemplate',
+        data     : function () {
+            return {nowTs : 0}
+        },
+        methods  : {
+            timeClick : function (e) {
+                this.nowTs = new Date().getTime();
+            }
+        }
+    })
+</script>
+<body>
+<div id="app">
+    <time-component></time-component>
+    <time-component></time-component>
+</div>
+</body>
+<script type="text/javascript">
+    var v = new Vue({
+        el : '#app'
+    })
+</script>
+</html>
