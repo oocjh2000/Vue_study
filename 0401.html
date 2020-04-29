@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="./vue.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="example">
+    <p><input type="number" v-model="amount"></p>
+    <p>
+        <button id="deposit" v-on:click='deposit'>예금</button>
+        <button id="withdraw" v-on:click="withdraw">인출</button>
+    </p>
+    <h3>잔고 {{balance}}</h3>
+</div>
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el      : '#example',
+        data    : {
+            amount  : 0,
+            balance : 0,
+        },
+        methods : {
+            deposit  : function () {
+                var amt = parseInt(this.amount)
+                if (amt <= 0)
+                    alert("1원 미만은 입금할 수 없습니다");
+                else this.balance += amt
+            },
+            withdraw : function () {
+                var amt =parseInt(this.amount)
+                if(amt<=0)
+                    alert('1원 미만은 출금할 수 없습니다.')
+                else if(amt>this.balance)
+                    alert('대출 하시겠습니까?')
+                else this.balance-=amt
+            }
+        }
+
+    })
+</script>
+</html>
