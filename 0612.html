@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./vue.js"></script>
+</head>
+<template id="list-template">
+    <li>{{msg}}</li>
+</template>
+<script type="text/javascript">
+    Vue.component('list-component', {
+        template : '#list-template',
+        props    : ['msg']
+    })
+</script>
+<body>
+<div id="app">
+    <ul>
+        <list-component msg="asdf"></list-component>
+        <list-component msg="asss"></list-component>
+    </ul>
+</div>
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el : '#app'
+    })
+</script>
+</html>
